@@ -1,0 +1,61 @@
+1) What is Generative AI (Gen AI) and where is it used?
+- Generative AI is a branch of Artificail Intelligence where it creates new content automatically based on the prompt rather than copying.
+  It can create images, videos, text(stories), or code based on the pattrens while training from large datasets.
+  Generative AI models are trained on large data sets using deep learning techniques such GAN(for images), Transformers(text), Diffusion models - these
+  learns pattrens and relationships between words.
+ Used in: Content creation(blog articles, social media posts and videos), Github copilot(code generation), healthcare(drug discovery, medical report generation), chatbots.
+
+2) What are the key components of a RAG (Retrieval-Augmented Generation) pipeline?
+- RAG essentially bridges the gap between the general knowledge of an LLM and the specialized, current information needed for precise answers.
+  Documents
+   ↓
+  Chunking
+   ↓
+  Bi-Encoder Embeddings(bi-encoder encodes queries and documents separately) 
+   ↓
+  Vector Database (ANN index) 
+   ↓
+  User Query
+   ↓
+  Query Embedding
+   ↓
+  ANN Retrieval (Top-K) HNSW
+   ↓
+  Cross-Encoder Reranking (cross-encoder processes query and document together)
+   ↓
+  Top Context
+   ↓
+  LLM Generation
+   ↓
+  Final Answer
+
+3) what is context-window ?
+- Context window is the maximum number of tokens a language model can process in a single prompt, including the user query, retrieved documents, 
+  system instructions, and conversation history.
+
+4) What is PySpark and how does it help in large-scale data processing?
+- PySpark is the official Python API for Apache Spark, It lets you write Spark programs using python instead of scala or java.
+  
+  In large-scale Data Processing - Large Datasets(terabytes or petabytes) cannot be processed efficiently on a single machine. 
+  Pyspark helps by providing : 
+Distibuted computing : Internally spark distributes the work across many computers(called clusters) to process big data Quickly
+   -- splitting a big task into small task is called Map
+   -- After processing when you aggregate it is called Reduce.
+   Map and Reduce is an essential technique in a distributed computing.
+   -- collection of computers is called cluster.
+   -- Driver is like a Team lead for all these computers.
+   -- Individual computers are called workers.
+When you write a code in spark, it is called spark application(run a spark job). Driver asks cluster manager for resouces( cpu and memory), 
+it assigns worker nodes to application.
+
+Fault tolerance -  If one computer gets crashed the driver program will distribute it to other computers.
+IN Memory - Data is processed in RAM rather than on disk like hadoop, which makes extremely fast. ( It make 100X than Hadoop).
+ Key modules include: Spark SQl, MLib, Spark Streaming.
+ Using pyspark we can read and write data from : CSV, JSON, Databases, Cloud storage, Data Lakes.
+ Use Cases: Cleaning and trasmorming large datasets, processing logs, user data, training models on massive datasets, Real-time analytics like financial fraud 
+            detection and reccomendation system.
+
+5) What is the difference between Spark and PySpark?
+-- spark is the open-source, distributed computing engine for big data processing. 
+   while pyspark is the specific python API for using the spark capabilites.
+   
